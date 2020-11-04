@@ -14,49 +14,26 @@
     <p id="ua"></p>
     <p id="is-app"></p>
     <script>
-        window.onload = function() {
+        const ua = document.getElementById('ua')
+        const isApp = document.getElementById('is-app')
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-        var desktopFallback = "https://youtube.com/watch?v=4KnNVK-udTU",
-        mobileFallback = "https://youtube.com/watch?v=4KnNVK-udTU",
-        app = "vnd.youtube://4KnNVK-udTU";
+        const isFbApp = () => {
+            return (userAgent.indexOf("FBAN") > -1) || (userAgent.indexOf("FBAV") > -1);
+        }
 
-        if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-            window.location = app;
+        ua.textContent = userAgent
+
+        isApp.textContent = isFbApp()
+
+        if (isFbApp()) {
+            window.location = 'xyz://';
+
             window.setTimeout(function() {
-                window.location = mobileFallback;
+                window.location = 'https://google.com.br';
             }, 25);
-        } else {
-            window.location = desktopFallback;
+
         }
-
-        function killPopup() {
-            window.removeEventListener('pagehide', killPopup);
-        }
-
-        window.addEventListener('pagehide', killPopup);
-
-        };
-        // const ua = document.getElementById('ua')
-        // const isApp = document.getElementById('is-app')
-        // const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-        // const isFbApp = () => {
-        //     return (userAgent.indexOf("FBAN") > -1) || (userAgent.indexOf("FBAV") > -1);
-        // }
-
-        // ua.textContent = userAgent
-
-        // isApp.textContent = isFbApp()
-
-        // if (!isFbApp()) {
-
-        //     const anchor = document.createElement('a')
-
-        //     anchor.target = "_blank"
-        //     anchor.href = 'https://google.com.br'
-
-        //     anchor.click()
-        // }
     </script>
 </body>
 </html>
