@@ -26,8 +26,8 @@
 
         isApp.textContent = isFbApp()
 
-        if (isFbApp()) {
-            window.location = 'googlechromes://google.com.br';
+        if (!isFbApp()) {
+            window.location = 'googlechrome://google.com.br';
         }
     </script>
 </body>
