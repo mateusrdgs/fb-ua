@@ -12,8 +12,10 @@
 </head>
 <body>
     <p id="ua"></p>
+    <p id="is-app"></p>
     <script>
         const ua = document.getElementById('ua')
+        const isApp = document.getElementById('is-app')
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
         const isFbApp = () => {
@@ -21,6 +23,8 @@
         }
 
         ua.textContent = userAgent
+
+        isApp.textContent = isFbApp()
 
         if (isFbApp()) {
             window.open('https://google.com.br')
