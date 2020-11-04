@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+          color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="ua"></p>
+    <script>
+        const ua = document.getElementById('ua')
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        const isFbApp = () => {
+            return (userAgent.indexOf("FBAN") > -1) || (userAgent.indexOf("FBAV") > -1);
+        }
+
+        ua.textContent = userAgent
+
+        if (isFbApp()) {
+            window.location.href = 'https://google.com.br'
+        }
+    </script>
+</body>
+</html>
