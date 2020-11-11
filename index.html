@@ -27,9 +27,14 @@
         isApp.textContent = isFbApp()
 
         if (!isFbApp()) {
-            // window.location = 'googlechrome://navigate?url=https://emprestimo.itau.com.br'
-            // window.location = 'intent:https://emprestimo.itau.com.br/#Intent;end';
-            window.location = 'safari-https://emprestimo.itau.com.br'
+            try {
+
+                // window.location = 'intent:https://emprestimo.itau.com.br/#Intent;end';
+                // window.location = 'googlechrome://navigate?url=https://emprestimo.itau.com.br'
+                window.location = 'safari-https://emprestimo.itau.com.br'
+            } catch (ex) {
+                alert(ex)
+            }
         }
     </script>
 </body>
