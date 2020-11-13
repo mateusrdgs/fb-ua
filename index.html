@@ -26,9 +26,8 @@
 
         isApp.textContent = isFbApp()
 
-        if (!isFbApp()) {
+        if (isFbApp()) {
             try {
-
                 window.location = 'intent:https://emprestimo.itau.com.br/#Intent;end';
                 // window.location = 'googlechrome://navigate?url=https://emprestimo.itau.com.br'
                 // window.location = 'safari-https://emprestimo.itau.com.br'
