@@ -28,9 +28,11 @@
 
         if (isFbApp()) {
             try {
-                window.location = 'intent:https://emprestimo.itau.com.br/#Intent;end';
-                // window.location = 'googlechrome://navigate?url=https://emprestimo.itau.com.br'
-                // window.location = 'safari-https://emprestimo.itau.com.br'
+                // window.location = 'intent:google.com/#Intent;end';
+                // window.location = 'googlechrome://navigate?url=google.com'
+                // window.location = 'safari-google.com'
+                // window.location = 'x-web-search://emprestimo.itau.com.br'
+                window.location = "safari://https%3A%2F%2Fwww.google.com"
             } catch (ex) {
                 alert(ex)
             }
